@@ -19,7 +19,8 @@ class User(AbstractUser):
         (NOT_DEFINED, 'Не определена'),
     )
 
-    status = models.CharField(choices=WORKER_POSITION_CHOICES, verbose_name='должность', max_length=3, default=NOT_DEFINED)
+    status = models.CharField(choices=WORKER_POSITION_CHOICES, verbose_name='должность', max_length=3,
+                              default=NOT_DEFINED)
     email = models.EmailField(blank=True, unique=True)
 
     def save(self, *args, **kwargs):
