@@ -1,4 +1,7 @@
 import React from "react";
+import {Container, Table, Row, Col} from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 const UserItem = ({user}) => {
     return (
@@ -13,13 +16,25 @@ const UserItem = ({user}) => {
 
 const UserList = ({users}) => {
     return (
-        <table>
-            <th>Username</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            {users.map((user) => <UserItem user={user}/>)}
-        </table>
+        <Container>
+            <Row>
+                <Col className='col-lg-12 col-sm-12'>
+                    <Table striped bordered hover size='lg' className='mt-2'>
+                        <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {users.map((user) => <UserItem user={user}/>)}
+                        </tbody>
+                    </Table>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
