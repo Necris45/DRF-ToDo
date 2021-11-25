@@ -23,6 +23,9 @@ class User(AbstractUser):
                               default=NOT_DEFINED)
     email = models.EmailField(blank=True, unique=True)
 
+    def __str__(self):
+        return f'(id-{self.id}){self.username}'
+
     def save(self, *args, **kwargs):
         self.email = self.email.lower()
         self.email = self.__class__.objects.normalize_email(self.email)
