@@ -24,7 +24,7 @@ class User(AbstractUser):
     email = models.EmailField(blank=True, unique=True)
 
     def __str__(self):
-        return f'(id-{self.id}){self.username}'
+        return f'(id-{self.id}){self.username} | position: {self.status}'
 
     def save(self, *args, **kwargs):
         self.email = self.email.lower()
