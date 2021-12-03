@@ -19,16 +19,16 @@ class TaskLimitPagination(LimitOffsetPagination):
 class ProjectModelViewSet(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectModelSerializer
-    renderer_classes = [JSONRenderer, BrowsableAPIRenderer]
-    pagination_class = ProjectsLimitPagination
+    # renderer_classes = [JSONRenderer, BrowsableAPIRenderer]
+    # pagination_class = ProjectsLimitPagination
     filterset_class = ProjectsFilter
 
 
 class TodoModelViewSet(ModelViewSet):
     queryset = Todo.objects.all()
     serializer_class = TodoModelSerializer
-    renderer_classes = [JSONRenderer, BrowsableAPIRenderer]
-    pagination_class = TaskLimitPagination
+    # renderer_classes = [JSONRenderer, BrowsableAPIRenderer]
+    # pagination_class = TaskLimitPagination
     filterset_class = TaskFilter
 
     def delete(self, request, *args, ** kwargs):

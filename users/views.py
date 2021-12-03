@@ -10,4 +10,4 @@ from rest_framework.viewsets import GenericViewSet
 class UsersCustomViewSet(ListModelMixin, RetrieveModelMixin, UpdateModelMixin, GenericViewSet):
     queryset = User.objects.all()
     serializer_class = UserModelSerializer
-    renderer_classes = [JSONRenderer, BrowsableAPIRenderer]
+    # renderer_classes = [JSONRenderer, BrowsableAPIRenderer]
