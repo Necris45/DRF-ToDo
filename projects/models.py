@@ -9,7 +9,9 @@ class Project(models.Model):
     users = models.ManyToManyField(User)
 
     def __str__(self):
-        return f'{self.name}'
+        # Добавил отображение id для удобства работы с поиском, позднее хочу попробовать полноценный поиск реализовать
+        # именно по названию, но к сожалению мог не успеть, поэтому пока что так
+        return f'(id-{self.id}) {self.name}'
 
 
 class Todo(models.Model):
