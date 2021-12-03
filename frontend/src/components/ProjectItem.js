@@ -11,35 +11,29 @@ const ProjectItem = ({project, users, todo}) => {
         }
     })
     return (
-
         <div>
             <p>Название проекта: {project.name} </p>
             <p>Ссылка на репозиторий: {project.repo}</p>
-
             <p><b>Пользователи:</b> {project.users.map((userId) => {
                 return users.find((user) => user.id == userId).username + ' (id:' + users.find((user) => user.id == userId).id + '), '
             })}</p>
             <p><b>Задачи:</b> {todolist.map((todo) => todo + ', ')}</p>
         </div>
-
-
     )
 }
 const ProjectItems = ({projects, users, todo}) => {
     let {id} = useParams();
     let filtered_project = projects.filter((project) => project.id == id)
 
-
     return (
         <Container>
             <Row>
-                <Col className='col-lg-6 col-sm-12
+                <Col className='col-lg-12 col-sm-12
                 mt-3'>
                     <p> {filtered_project.map((project) => <ProjectItem project={project} users={users}
                                                                         todo={todo}/>)}</p>
                 </Col>
             </Row>
-
         </Container>
     )
 }
