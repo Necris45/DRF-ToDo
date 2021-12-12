@@ -3,7 +3,7 @@ import {Navbar, Container, Nav, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Link} from "react-router-dom";
 
-const Menu = () => {
+const Menu = ({is_authenticated, logout, login}) => {
     return(
         <div className='bg-dark'>
             <Container>
@@ -16,6 +16,9 @@ const Menu = () => {
                                     Пользователи</Link></li>
                                 <li ><Link style={{marginRight: '10px'}} className="text-light" to='/projects'>Проекты</Link></li>
                                 <li ><Link style={{marginRight: '10px'}} className="text-light" to='/todo'>Задачи</Link></li>
+                                {is_authenticated() ?
+                                    <h6 className="text-light" Header style={{marginRight: '10px', marginLeft: '10px'}}>{login} <button onClick={()=>{logout()}}>Выйти</button></h6> :
+                                    <Link style={{marginRight: '10px', marginLeft: '10px'}} className="text-light"to='/login'>Войти</Link>}
                             </Nav>
                         </Navbar>
                     </Col>
