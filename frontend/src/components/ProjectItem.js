@@ -15,6 +15,7 @@ const ProjectItem = ({project, users, todo}) => {
             <p>Название проекта: {project.name} </p>
             <p>Ссылка на репозиторий: {project.repo}</p>
             <p><b>Пользователи:</b> {project.users.map((userId) => {
+            // eslint-disable-next-line
                 return users.find((user) => user.id == userId).username + ' (id:' + users.find((user) => user.id == userId).id + '), '
             })}</p>
             <p><b>Задачи:</b> {todolist.map((todo) => todo + ', ')}</p>
@@ -23,6 +24,7 @@ const ProjectItem = ({project, users, todo}) => {
 }
 const ProjectItems = ({projects, users, todo}) => {
     let {id} = useParams();
+    // eslint-disable-next-line
     let filtered_project = projects.filter((project) => project.id == id)
 
     return (
