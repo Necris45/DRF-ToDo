@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
 from .models import Project, Todo
-from .serialiazers import ProjectModelSerializer, TodoModelSerializer
+from .serialiazers import ProjectModelSerializer, TodoModelSerializer, ProjectModelSerializerBase
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.renderers import BrowsableAPIRenderer, JSONRenderer
 from .filters import ProjectsFilter, TaskFilter
@@ -18,10 +18,15 @@ class TaskLimitPagination(LimitOffsetPagination):
 
 class ProjectModelViewSet(ModelViewSet):
     queryset = Project.objects.all()
-    serializer_class = ProjectModelSerializer
+    # serializer_class = ProjectModelSerializer
     # renderer_classes = [JSONRenderer, BrowsableAPIRenderer]
     # pagination_class = ProjectsLimitPagination
     filterset_class = ProjectsFilter
+
+    def get_serializer_class(self):
+        if self.request.method in ['GET']:
+            return ProjectModelSerializer
+        return ProjectModelSerializerBase
 
 
 class TodoModelViewSet(ModelViewSet):
