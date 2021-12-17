@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'projects',
     'django_filters',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -141,6 +142,7 @@ AUTH_USER_MODEL = 'users.User'
 # DjangoModelPermissionsOrAnonReadOnly
 # from rest_framework.authentication import BasicAuthentication, SessionAuthentication, TokenAuthentication
 REST_FRAMEWORK = {
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning',
     'DEFAULT_RENDERER_CLASSES': [
         'djangorestframework_camel_case.render.CamelCaseJSONRenderer',
         'djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer',
