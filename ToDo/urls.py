@@ -22,6 +22,8 @@ from rest_framework.authtoken import views
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework.permissions import AllowAny
+from django.views.decorators.csrf import csrf_exempt
+from graphene_django.views import GraphQLView
 
 router = DefaultRouter()
 router.register('users', UsersCustomViewSet)
@@ -48,4 +50,5 @@ urlpatterns = [
     path('swagger/', schema_view.with_ui('swagger')),
     path('swagger/<str:format>/', schema_view.without_ui()),
     path('redoc/', schema_view.with_ui('redoc')),
+    path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True))),
 ]
