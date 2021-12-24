@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 const UserItem = ({user}) => {
     return (
         <tr>
+            <td>{user.id}</td>
             <td>{user.username}</td>
             <td>{user.firstName}</td>
             <td>{user.lastName}</td>
@@ -14,7 +15,7 @@ const UserItem = ({user}) => {
     )
 }
 
-const UserList = ({users}) => {
+const UserList = ({users, deleteUsers}) => {
     return (
         <Container>
             <Row>
@@ -23,6 +24,7 @@ const UserList = ({users}) => {
                     <Table striped bordered hover size='lg' className='mt-2'>
                         <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Username</th>
                             <th>First Name</th>
                             <th>Last Name</th>
