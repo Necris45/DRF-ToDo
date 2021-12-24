@@ -21,7 +21,7 @@ class ProjectModelViewSet(ModelViewSet):
     serializer_class = ProjectModelSerializer
     # renderer_classes = [JSONRenderer, BrowsableAPIRenderer]
     # pagination_class = ProjectsLimitPagination
-    filterset_class = ProjectsFilter
+    # filterset_class = ProjectsFilter
 
 
 class TodoModelViewSet(ModelViewSet):
@@ -29,7 +29,7 @@ class TodoModelViewSet(ModelViewSet):
     serializer_class = TodoModelSerializer
     # renderer_classes = [JSONRenderer, BrowsableAPIRenderer]
     # pagination_class = TaskLimitPagination
-    filterset_class = TaskFilter
+    # filterset_class = TaskFilter
 
     def delete(self, request, *args, ** kwargs):
         self.object = self.get_object()

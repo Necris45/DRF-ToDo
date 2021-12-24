@@ -24,6 +24,7 @@ from drf_yasg.views import get_schema_view
 from rest_framework.permissions import AllowAny
 from django.views.decorators.csrf import csrf_exempt
 from graphene_django.views import GraphQLView
+from django.views.generic import TemplateView
 
 router = DefaultRouter()
 router.register('users', UsersCustomViewSet)
@@ -47,6 +48,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api-token-auth/', views.obtain_auth_token),
     path('api/', include(router.urls)),
+    path('', TemplateView.as_view(template_name='index.html')),
     path('swagger/', schema_view.with_ui('swagger')),
     path('swagger/<str:format>/', schema_view.without_ui()),
     path('redoc/', schema_view.with_ui('redoc')),

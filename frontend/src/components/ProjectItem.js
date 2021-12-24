@@ -12,7 +12,7 @@ const ProjectItem = ({project, users, todo}) => {
     })
     return (
         <div>
-            <p>Название проекта: {project.name} </p>
+            <p>Название проекта: {project.name}</p>
             <p>Ссылка на репозиторий: {project.repo}</p>
             <p><b>Пользователи:</b> {project.users.map((userId) => {
             // eslint-disable-next-line
