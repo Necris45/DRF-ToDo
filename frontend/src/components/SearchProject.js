@@ -40,7 +40,7 @@ class SearchProject extends React.Component {
                             <tbody>
                             {this.props.projects.map((project) =>
                                 <tr>
-                                    <td><Link to={`projects/${project.id}`}> {project.name} </Link></td>
+                                    <td><Link to={`${project.id}`}> {project.name} </Link></td>
                                     <td>{project.repo}</td>
                                     <td>{project.users.join(', ')}</td>
                                     <td>
@@ -51,7 +51,7 @@ class SearchProject extends React.Component {
                                 </tr>)}
                             </tbody>
                         </Table>
-                        <div><Link className="btn-warning p-1" to="/project/create">Создать</Link></div>
+                        <div><Link className="btn-warning p-1" to="/project/create/">Создать</Link></div>
                     </Col>
                 </Row>
             </Container>

@@ -12,13 +12,13 @@ const Menu = ({is_authenticated, logout, login}) => {
                         <Navbar>
                             <Navbar.Brand className='text-light'>ToDo List</Navbar.Brand>
                             <Nav>
-                                <li > <Link style={{marginRight: '10px'}} className="text-light" to='/users'>
+                                <li > <Link style={{marginRight: '10px'}} className="text-light" to='/users/'>
                                     Пользователи</Link></li>
-                                <li ><Link style={{marginRight: '10px'}} className="text-light" to='/projects'>Проекты</Link></li>
-                                <li ><Link style={{marginRight: '10px'}} className="text-light" to='/todo'>Задачи</Link></li>
+                                <li ><Link style={{marginRight: '10px'}} className="text-light" to='/projects/'>Проекты</Link></li>
+                                <li ><Link style={{marginRight: '10px'}} className="text-light" to='/todo/'>Задачи</Link></li>
                                 {is_authenticated() ?
                                     <h6 className="text-light" Header style={{marginRight: '10px', marginLeft: '10px'}}>{login} <button onClick={()=>{logout()}}>Выйти</button></h6> :
-                                    <Link style={{marginRight: '10px', marginLeft: '10px'}} className="text-light"to='/login'>Войти</Link>}
+                                    <Link style={{marginRight: '10px', marginLeft: '10px'}} className="text-light"to='/login/'>Войти</Link>}
                             </Nav>
                         </Navbar>
                     </Col>
