@@ -40,7 +40,7 @@ class SearchProject extends React.Component {
                             <tbody>
                             {this.props.projects.map((project) =>
                                 <tr>
-                                    <td><Link to={`${project.id}`}> {project.name} </Link></td>
+                                    <td><Link to={`${project.id}/`}> {project.name} </Link></td>
                                     <td>{project.repo}</td>
                                     <td>{project.users.join(', ')}</td>
                                     <td>

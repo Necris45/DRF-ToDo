@@ -187,14 +187,14 @@ class App extends React.Component {
                                 <SearchProject projects={this.state.projects}
                                                 deleteProject={(id) => this.deleteProject(id)}
                                                 searchProject={(name, filter)=>this.searchProject(name, filter)}/>}/>
-                            <Route exact path="/projects/:id" component = {() =>
+                            <Route exact path="/projects/:id/" component = {() =>
                                 <ProjectItems projects={this.state.projects} users={this.state.users} todo={this.state.todo}/> }/>
-                            <Route exact path='/project/create' component={() => <ProjectForm
+                            <Route exact path='/project/create/' component={() => <ProjectForm
                                 users={this.state.users}
                             createProject={(name, repo, users) => this.createProject(name, repo, users)}/>}/>
-                            <Route exact path="/todo/create" component={() => <TodoForm users={this.state.users} projects={this.state.projects}
+                            <Route exact path="/todo/create/" component={() => <TodoForm users={this.state.users} projects={this.state.projects}
                                                       createTodo={(project, task_text, executive_user) => this.createTodo(project, task_text, executive_user)}/>}/>
-                            <Route exact path='/login' component={() => <LoginForm get_token={(username, password) =>
+                            <Route exact path='/login/' component={() => <LoginForm get_token={(username, password) =>
                             this.get_token(username, password)} />} />
                             <Route exact path='/' component={DefaultPage}/>
                             <Route component={NotFound404}/>

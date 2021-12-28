@@ -53,7 +53,7 @@ urlpatterns = [
     path('users/', TemplateView.as_view(template_name='index.html')),
     path('projects/', TemplateView.as_view(template_name='index.html')),
     path('projects/<int:projects_id>/', TemplateView.as_view(template_name='index.html')),
-    path('project/create', TemplateView.as_view(template_name='index.html')),
+    path('project/create/', TemplateView.as_view(template_name='index.html')),
     path('todo/', TemplateView.as_view(template_name='index.html')),
     path('todo/create', TemplateView.as_view(template_name='index.html')),
     path('swagger/', schema_view.with_ui('swagger')),
