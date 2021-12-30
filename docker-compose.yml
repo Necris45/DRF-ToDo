@@ -17,9 +17,9 @@ services:
       - 8080:8080
     command:
       bash -c "
-      python3 manage.py migrate &&
-      gunicorn ToDo.wsgi -b 0.0.0.0:8080 &&
-      python3 manage.py create_super_tester
+      python manage.py migrate &&
+      python manage.py create_data &&
+      gunicorn todo.wsgi -b 0.0.0.0:8080
       "
     depends_on:
       - db
