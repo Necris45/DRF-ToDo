@@ -18,7 +18,6 @@ services:
     command:
       bash -c "
       python manage.py migrate &&
-#      python manage.py create_data &&
       gunicorn todo.wsgi -b 0.0.0.0:8080
       "
     depends_on:
