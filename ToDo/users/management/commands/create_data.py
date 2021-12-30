@@ -13,9 +13,9 @@ class Command(BaseCommand):
 
         project_1 = Project.objects.create(name='Первый проект', repo="")
         project_1.users.set([1,2,3])
-        project_2 = Project.objects.create(name='Второй проект', repo="", users = [1,3,4])
+        project_2 = Project.objects.create(name='Второй проект', repo="")
         project_2.users.set([1,3,4])
-        project_3 = Project.objects.create(name='Третий проект', repo="", users = [2,3,4])
+        project_3 = Project.objects.create(name='Третий проект', repo="")
         project_3.users.set([2,3,4])
 
         Todo.objects.create(project=1, executive_user=2,task_text='первая задача')
