@@ -1,6 +1,5 @@
 version: '3.1'
 
-
 services:
   db:
     image: postgres:13.1
@@ -18,21 +17,21 @@ services:
       - 8080:8080
     command:
       bash -c "
-      python manage.py migrate &&
+      python3 manage.py migrate &&
       gunicorn ToDo.wsgi -b 0.0.0.0:8080 &&
-      python manage.py create_super_tester
+      python3 manage.py create_super_tester
       "
     depends_on:
       - db
-  nginx:
-    build: ./nginx
-    ports:
-      - 8000:80
-    depends_on:
-      - backend
-  frontend:
-    build: ./frontend
-    ports:
-      - 80:80
-    depends_on:
-      - nginx
+#  nginx:
+#    build: ./nginx
+#    ports:
+#      - 8000:80
+#    depends_on:
+#      - backend
+#  frontend:
+#    build: ./frontend
+#    ports:
+#      - 80:80
+#    depends_on:
+#      - nginx
