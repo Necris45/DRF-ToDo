@@ -7,9 +7,9 @@ from users.models import User
 class Command(BaseCommand):
     def handle(self, *args, **options):
         User.objects.create_superuser(username='Necris45', email='necris01@mail.ru', password='1')
-        User.objects.create_user(username='Test_admin', email='test_admin@mail.ru', password='Qwerty1')
-        User.objects.create_user(username='Test_developer', email='test_developer@mail.ru', password='Qwerty1')
-        User.objects.create_user(username='Test_manager', email='test_manager@mail.ru', password='Qwerty1')
+        User.objects.create_user(username='Test_admin2', email='test_admin2@mail.ru', password='Qwerty1')
+        User.objects.create_user(username='Test_developer2', email='test_developer2@mail.ru', password='Qwerty1')
+        User.objects.create_user(username='Test_manager2', email='test_manager2@mail.ru', password='Qwerty1')
 
         Project.objects.create(name='Первый проект', repo="", users = [1,2,4])
         Project.objects.create(name='Второй проект', repo="", users = [1,3,4])
