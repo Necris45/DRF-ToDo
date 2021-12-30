@@ -5,7 +5,7 @@ services:
     image: postgres:13.1
     privileged: true
     ports:
-      - 5436:5436
+      - 5432:5432дфые
     environment:
       POSTGRES_USER: necris
       POSTGRES_PASSWORD: 1
@@ -18,8 +18,8 @@ services:
     command:
       bash -c "
       python manage.py migrate &&
-      python manage.py create_super_tester &&
-      gunicorn ToDo.wsgi -b 0.0.0.0:8080
+      gunicorn ToDo.wsgi -b 0.0.0.0:8080 &&
+      python manage.py create_super_tester
       "
     depends_on:
       - db
