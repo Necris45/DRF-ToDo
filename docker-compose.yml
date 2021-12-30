@@ -6,7 +6,7 @@ services:
     image: postgres:13.1
     privileged: true
     ports:
-      - 5436:5436
+      - 5432:5432
     environment:
       POSTGRES_USER: necris
       POSTGRES_PASSWORD: 1
